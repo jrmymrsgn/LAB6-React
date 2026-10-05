@@ -21,6 +21,7 @@ export default function Products() {
 
   async function handleDelete(id) {
     if (!window.confirm('Delete this product? This cannot be undone.')) return;
+
     try {
       await api.delete(`/products/${id}`);
       loadProducts();
@@ -36,11 +37,17 @@ export default function Products() {
 
   return (
     <div className="page-wrap">
+
       <div className="masthead">
+        <div>
+          <h1>Products</h1>
+        </div>
+
         <div className="actions">
           <Link className="add" to="/products/new">
             + Add Product
           </Link>
+
           <button className="logout" onClick={handleLogout}>
             Logout
           </button>
@@ -62,6 +69,7 @@ export default function Products() {
               <th>Actions</th>
             </tr>
           </thead>
+
           <tbody>
             {products.length === 0 ? (
               <tr>
@@ -73,18 +81,41 @@ export default function Products() {
               products.map((p) => (
                 <tr key={p.id}>
                   <td className="id-cell">#{p.id}</td>
-                  <td className="name-cell">{p.product_name}</td>
-                  <td className="desc-cell">{p.description}</td>
-                  <td className="price-cell">₱{Number(p.price).toFixed(2)}</td>
-                  <td>
-                    <span className="qty-badge">{p.quantity}</span>
+
+                  <td className="name-cell">
+                    {p.product_name}
                   </td>
-                  <td className="date-cell">{p.created_at}</td>
+
+                  <td className="desc-cell">
+                    {p.description}
+                  </td>
+
+                  <td className="price-cell">
+                    ₱{Number(p.price).toFixed(2)}
+                  </td>
+
+                  <td>
+                    <span className="qty-badge">
+                      {p.quantity}
+                    </span>
+                  </td>
+
+                  <td className="date-cell">
+                    {p.created_at}
+                  </td>
+
                   <td className="row-actions">
-                    <Link className="edit" to={`/products/${p.id}/edit`}>
+                    <Link
+                      className="edit"
+                      to={`/products/${p.id}/edit`}
+                    >
                       Edit
                     </Link>
-                    <button className="delete" onClick={() => handleDelete(p.id)}>
+
+                    <button
+                      className="delete"
+                      onClick={() => handleDelete(p.id)}
+                    >
                       Delete
                     </button>
                   </td>
@@ -94,6 +125,7 @@ export default function Products() {
           </tbody>
         </table>
       </div>
+
     </div>
   );
 }

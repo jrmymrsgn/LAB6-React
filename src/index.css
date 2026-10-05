@@ -163,9 +163,10 @@ button:disabled {
 .masthead {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 28px;
 }
+
 
 .path {
   font-family: 'IBM Plex Mono', monospace;
@@ -194,7 +195,10 @@ button:disabled {
   color: var(--muted);
   font-size: 13px;
   padding: 0;
+  border: none;
+  cursor: pointer;
 }
+
 
 .logout:hover {
   color: var(--text);
