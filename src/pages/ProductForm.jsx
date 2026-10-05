@@ -70,10 +70,6 @@ export default function ProductForm() {
     <div className="form-page">
       <div className="form-card">
 
-        <div className="brand">
-          lab6db / products
-        </div>
-
         <h1>
           {isEdit ? 'Edit Product' : 'Add Product'}
         </h1>
