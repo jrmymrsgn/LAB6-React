@@ -36,8 +36,19 @@ body {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 32px;
+  padding: 40px 36px;
   width: 320px;
+  text-align: center;
+  
+}
+
+.card label,
+.card .error {
+  text-align: left;
+}
+
+.card button {
+  width: 100%;
 }
 
 .brand {
@@ -251,14 +262,16 @@ tbody tr:hover {
   color: var(--accent);
   font-family: 'IBM Plex Mono', monospace;
   font-size: 12px;
+}
 
-  .date-cell {
-  color: #8b95a1;
-  font-size: 0.85rem;
+.date-cell {
+  color: var(--muted);
+  font-size: 13px;
+  font-family: 'IBM Plex Mono', monospace;
   white-space: nowrap;
 }
 
-}
+
 
 .row-actions a,
 .row-actions button {
@@ -293,7 +306,41 @@ tbody tr:hover {
   margin: 16px 0 24px;
 }
 
-.page-wrap .card {
-  width: auto;
-  max-width: 480px;
+.form-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 36px;
+  border-radius: 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+.form-card label,
+.form-card .error {
+  text-align: left;
+}
+
+.save-btn {
+  width: 100%;
+}
+
+.cancel-link {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.cancel-link:hover {
+  color: var(--text);
 }
