@@ -28,9 +28,7 @@ export default function Login() {
   return (
     <div className="auth-wrap">
       <div className="card">
-        <span className="brand">lab6db / products</span>
         <h1>Sign in</h1>
-        <div className="sub">Access your product dashboard</div>
 
         {error && <div className="error">{error}</div>}
 

@@ -37,10 +37,6 @@ export default function Products() {
   return (
     <div className="page-wrap">
       <div className="masthead">
-        <div>
-          <h1>Products</h1>
-          <div className="path">lab6db / products</div>
-        </div>
         <div className="actions">
           <Link className="add" to="/products/new">
             + Add Product
